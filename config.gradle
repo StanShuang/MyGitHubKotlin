@@ -1,0 +1,52 @@
+ext{
+    android = [
+            compileSdkVersion: 29,
+            targetSdkVersion: 29,
+            minSdkVersion: 19,
+            versionCode: 1,
+            versionName: "1.0",
+            applicationId: "com.stan.mygithub"
+    ]
+    dependVersion = [
+            androidxVersion: "1.0.2",
+            androidxlayoutVersion: "1.1.3",
+            lottie_version:"2.8.0",
+            iconics_version:"4.0.1-b01",
+            textfiled_box_version:"1.4.5",
+            retrofit_version:"2.6.0",
+            okhttp3_version:"3.10.0",
+            rx_android:"2.1.1",
+            rx_version:"2.2.10",
+            spinkit_version:"1.2.0"
+
+
+    ]
+    androidX = [
+            appcompat:           "androidx.appcompat:appcompat:1.0.2",
+            corektx:             "androidx.core:core-ktx:1.0.2",
+            constrantlayout:     "androidx.constraintlayout:constraintlayout:1.1.3",
+            navigationFragment:  "androidx.navigation:navigation-fragment:2.1.0-beta02",
+            navigationUi:        "androidx.navigation:navigation-ui:2.1.0-beta02"
+
+    ]
+    commonDeps = [
+            lottie:              "com.airbnb.android:lottie:${dependVersion.lottie_version}",
+            mikepenzView:        "com.mikepenz:iconics-views:${dependVersion.iconics_version}",
+            textFieldBoxes:      "com.github.HITGIF:TextFieldBoxes:${dependVersion.textfiled_box_version}",
+            spinkit:             "com.github.ybq:Android-SpinKit:${dependVersion.spinkit_version}"
+    ]
+    httpDeps = [
+            okhttp3:             "com.squareup.okhttp3:logging-interceptor:${dependVersion.okhttp3_version}",
+            retofit:             "com.squareup.retrofit2:retrofit:${dependVersion.retrofit_version}",
+            cnvertergson:        "com.squareup.retrofit2:converter-gson:${dependVersion.retrofit_version}",
+            retrofitAdapter:     "com.squareup.retrofit2:adapter-rxjava2:${dependVersion.retrofit_version}",
+            retrofitconverter:   "com.squareup.retrofit2:converter-scalars:${dependVersion.retrofit_version}",
+            rxAndroid:           "io.reactivex.rxjava2:rxandroid:${dependVersion.rx_android}",
+            rxJava:              "io.reactivex.rxjava2:rxjava:${dependVersion.rx_version}"
+
+    ]
+    androidxLibs = androidX.values()
+    commonDepLibs = commonDeps.values()
+    httpDepLibs = httpDeps.values()
+
+}
