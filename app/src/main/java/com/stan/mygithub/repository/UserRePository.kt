@@ -13,12 +13,13 @@ import io.reactivex.Observable
 import retrofit2.Response
 import retrofit2.Retrofit
 import io.reactivex.functions.Function
+import javax.inject.Inject
 
 
 /**
  * 用户相关数据获取
  */
-class UserRePository(private val retrofit: Retrofit) {
+class UserRePository @Inject constructor(private val retrofit: Retrofit) {
     private var userInfoStorage : String by GSYPreference(AppConfig.USER_INFO,"")
     /**
      * 获取用户详细信息

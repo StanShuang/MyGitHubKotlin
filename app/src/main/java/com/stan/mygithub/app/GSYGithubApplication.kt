@@ -8,6 +8,8 @@ import com.stan.mygithub.di.AppInjector
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
+import javax.inject.Inject
+
 import kotlin.properties.Delegates
 
 /**
@@ -31,6 +33,7 @@ class GSYGithubApplication: Application(),HasActivityInjector {
      * 从Application获取一个DispatchingAndroidInjector<Activity>，并将activity传递给inject(activity)
      * DispatchingAndroidInjector通过AndroidInjector.Factory创建AndroidInjector
      */
+    @Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
     override fun onCreate() {
         super.onCreate()
@@ -41,8 +44,8 @@ class GSYGithubApplication: Application(),HasActivityInjector {
             ARouter.openDebug()
         }
         //Application级别注入
-        AppInjector.init(this)
         ARouter.init(this)
+        AppInjector.init(this)
     }
     override fun activityInjector(): AndroidInjector<Activity> {
         return dispatchingAndroidInjector
