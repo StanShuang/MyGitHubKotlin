@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.stan.mygithub.R
+import org.jetbrains.anko.clearTask
+
 /**
  * FileName: StartActivity
  * Author: Stan
@@ -17,8 +19,15 @@ class StartActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
+
         Intent(this, StartNavigationActivity:: class.java).run{
+            this.clearTask()
             startActivity(this)
         }
+        finish()
+    }
+
+    override fun onBackPressed() {
+
     }
 }

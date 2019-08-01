@@ -40,7 +40,8 @@ class LoginRepository @Inject constructor(private val retrofit: Retrofit,private
         val type = "$username:$password"
         val base64 =Base64.encodeToString(type.toByteArray(),Base64.NO_WRAP).replace("\\+","%2B")
         Debuger.printfLog("base64Str login $base64")
-
+        usernameStorage = username
+        userBasicCodeStorage = base64
         val loginService = getTokenObservable()
         val userService = userRepository.getPersonInfoObservable()
 

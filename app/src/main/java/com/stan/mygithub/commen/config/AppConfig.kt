@@ -18,4 +18,6 @@ object AppConfig {
     const val USER_BASE_CODE = "user_base_code"
     const val PAGE_SIZE = 30
     const val HTTP_TIME_OUT = 20 * 1000L
+    const val TEST_STRING = "test_string"
+    const val PREFERENCE_NAME = "mygithub"
 }

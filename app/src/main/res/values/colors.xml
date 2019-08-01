@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimaryDark">#00474B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="transparent">#00000000</color>
     <color name="white">#FFFFFF</color>
     <color name="subLightTextColor">#c4c4c4</color>
+    <color name="textColorPrimary">#616161</color>
+    <color name="list_divider">@color/Grey400</color>
+    <color name="Grey400">#bdbdbd</color>
 </resources>

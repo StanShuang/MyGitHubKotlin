@@ -58,10 +58,10 @@ android {
         abortOnError false
     }
     //针对编辑错误
-    configurations {
-        cleanedAnnotations
-        compile.exclude group: 'org.jetbrains', module: 'annotations'
-    }
+//    configurations {
+//        cleanedAnnotations
+//        compile.exclude group: 'org.jetbrains', module: 'annotations'
+//    }
     packagingOptions {
         exclude 'META-INF/library-core_release.kotlin_module'
     }
@@ -94,6 +94,8 @@ dependencies {
     implementation rootProject.ext.commonDepLibs
     //网络库
     implementation rootProject.ext.httpDepLibs
+    //icon库
+    implementation rootProject.ext.mikepenzViewLibs
     implementation("com.squareup.retrofit2:converter-simplexml:2.6.0") {
         exclude group: 'xpp3', module: 'xpp3'
         exclude group: 'stax', module: 'stax-api'

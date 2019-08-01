@@ -31,9 +31,8 @@ ext{
     ]
     commonDeps = [
             lottie:              "com.airbnb.android:lottie:${dependVersion.lottie_version}",
-            mikepenzView:        "com.mikepenz:iconics-views:${dependVersion.iconics_version}",
             textFieldBoxes:      "com.github.HITGIF:TextFieldBoxes:${dependVersion.textfiled_box_version}",
-            spinkit:             "com.github.ybq:Android-SpinKit:${dependVersion.spinkit_version}"
+            spinkit:             "com.github.ybq:Android-SpinKit:${dependVersion.spinkit_version}",
     ]
     httpDeps = [
             okhttp3:             "com.squareup.okhttp3:logging-interceptor:${dependVersion.okhttp3_version}",
@@ -45,8 +44,15 @@ ext{
             rxJava:              "io.reactivex.rxjava2:rxjava:${dependVersion.rx_version}"
 
     ]
+    mikepenzViewDeps = [
+            mikepenzView:        "com.mikepenz:iconics-views:${dependVersion.iconics_version}",
+            iconics:             "com.mikepenz:iconics-core:${dependVersion.iconics_version}",
+            iconicType:          "com.mikepenz:material-design-iconic-typeface:2.2.0.6-kotlin@aar"
+
+    ]
     androidxLibs = androidX.values()
     commonDepLibs = commonDeps.values()
     httpDepLibs = httpDeps.values()
+    mikepenzViewLibs = mikepenzViewDeps.values()
 
 }

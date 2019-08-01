@@ -49,5 +49,6 @@ class AppModel{
     fun providesRetrofit(): Retrofit{
         return RetrofitFactory.instance.retrofit
     }
+    //TODO 注入数据库
 
 }

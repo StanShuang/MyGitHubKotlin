@@ -1,15 +1,24 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <style name="AppFullTheme" parent="AppTheme">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowActionBar">false</item>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="ActivityTheme" parent="AppTheme.NoActionBar">
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="viewBackground">@color/white</item>
+        <!--关闭启动窗口-->
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:listDivider">@drawable/bg_divider</item>
+    </style>
+    <style name="AppFullTheme" parent="AppTheme.NoActionBar">
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowIsTranslucent">false</item>
     </style>
@@ -24,5 +33,7 @@
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowNoTitle">true</item>
     </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

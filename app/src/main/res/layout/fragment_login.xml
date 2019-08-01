@@ -104,19 +104,27 @@
                 <View android:layout_width="0dp"
                       android:layout_height="0dp"
                       android:layout_weight="1"/>
-                <Button
+                <com.stan.mygithub.commen.view.StateButton
                         android:id="@+id/login_submit_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:layout_marginLeft="15dp"
                         android:layout_marginRight="15dp"
                         android:layout_marginBottom="20dp"
-                        android:text="@string/Login"
                         android:onClick="@{loginViewModel::onSubmitClick}"
+                        android:text="@string/Login"
                         android:textSize="@dimen/normalTextSize"
-                        android:textColor="@color/white"
-                        android:background="@drawable/button_bac"
-                        style="?android:attr/borderlessButtonStyle"/>
+                        app:animationDuration="1000"
+                        app:navGraph="@navigation/gsy_navigation"
+                        app:normalBackgroundColor="@color/colorPrimaryDark"
+                        app:normalTextColor="@android:color/white"
+                        app:pressedBackgroundColor="@color/colorPrimaryDark"
+                        app:pressedTextColor="@android:color/white"
+                        app:radius="5dp"
+                        app:roundsize="false"
+                        app:unableBackgroundColor="@color/colorPrimaryDark"
+                        app:unableTextColor="@android:color/white" />
 
             </LinearLayout>
 

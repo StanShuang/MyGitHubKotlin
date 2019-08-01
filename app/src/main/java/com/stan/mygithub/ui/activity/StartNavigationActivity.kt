@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import com.stan.mygithub.R
+import com.stan.mygithub.commen.config.AppConfig
+import com.stan.mygithub.commen.utils.GSYPreference
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
+import org.jetbrains.anko.toast
 import javax.inject.Inject
 
 /**
@@ -20,7 +23,6 @@ import javax.inject.Inject
  * 作者姓名 修改时间 版本号 描述
  */
 class StartNavigationActivity: AppCompatActivity(),HasSupportFragmentInjector {
-
     // 当 Fragment 调用 AndroidSupportInjection.inject(this)时
     // 从Activity获取一个DispatchingAndroidInjector<Fragment>，并将Fragment传递给inject(Fragment)
     @Inject
@@ -34,12 +36,18 @@ class StartNavigationActivity: AppCompatActivity(),HasSupportFragmentInjector {
     override fun supportFragmentInjector(): AndroidInjector<Fragment> {
         return dispatchingAndroidInjector
     }
-
+    var lastTime: Long = 0
     override fun onBackPressed() {
         val fragment = supportFragmentManager.primaryNavigationFragment
         if(fragment is NavHostFragment){
             if(fragment.navController.currentDestination?.id == R.id.loginFragment){
-                super.onBackPressed()
+                if(System.currentTimeMillis() - lastTime <= 2000){
+                    super.onBackPressed()
+                }else{
+                    this.toast(R.string.AppOut)
+                    lastTime = System.currentTimeMillis()
+                }
+
             }
         }
 

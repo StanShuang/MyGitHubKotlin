@@ -27,5 +27,7 @@
 
         <!--animation duration-->
         <attr name="animationDuration" format="integer|reference" />
+        <attr name="textColorPrimary" format="color" />
+        <attr name="viewBackground" format="color" />
     </declare-styleable>
 </resources>

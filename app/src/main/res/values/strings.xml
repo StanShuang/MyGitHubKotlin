@@ -7,6 +7,10 @@
     <string name="LoginPWTip">密码不能为空</string>
     <string name="loading">加载中···</string>
     <string name="LoginFailTip">登陆失败</string>
+    <string name="AppOut">再次点击退出</string>
+    <string name="ActionRecommend">推荐</string>
+    <string name="ActionTrend">趋势</string>
+    <string name="ActionMine">我的</string>
 
     <string name="error_401">[401错误可能: 未授权 \\ 授权登录失败 \\ 登录过期]</string>
     <string name="error_403">403没权限哦</string>

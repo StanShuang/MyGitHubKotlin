@@ -3,7 +3,9 @@ package com.stan.mygithub.app
 import android.app.Activity
 import android.app.Application
 import com.alibaba.android.arouter.launcher.ARouter
+import com.mikepenz.iconics.Iconics
 import com.stan.mygithub.BuildConfig
+import com.stan.mygithub.commen.style.GSYIconfont
 import com.stan.mygithub.di.AppInjector
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -46,6 +48,9 @@ class GSYGithubApplication: Application(),HasActivityInjector {
         //Application级别注入
         ARouter.init(this)
         AppInjector.init(this)
+        ///初始化图标库
+        Iconics.init(applicationContext)
+        Iconics.registerFont(GSYIconfont)
     }
     override fun activityInjector(): AndroidInjector<Activity> {
         return dispatchingAndroidInjector
