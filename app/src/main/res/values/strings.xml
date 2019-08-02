@@ -11,6 +11,19 @@
     <string name="ActionRecommend">推荐</string>
     <string name="ActionTrend">趋势</string>
     <string name="ActionMine">我的</string>
+    <string name="nav_feedback">用户反馈</string>
+    <string name="nav_setting">偏好设置</string>
+    <string name="nav_logout">退出登录</string>
+    <string name="nav_night">夜间模式</string>
+    <string name="nav_info">个人信息</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="created_at">创建于</string>
+    <string name="staredText">星标</string>
+    <string name="beStaredText">荣耀</string>
+    <string name="FollowersText">粉丝</string>
+    <string name="FollowedText">关注</string>
+    <string name="repositoryText">仓库</string>
 
     <string name="error_401">[401错误可能: 未授权 \\ 授权登录失败 \\ 登录过期]</string>
     <string name="error_403">403没权限哦</string>

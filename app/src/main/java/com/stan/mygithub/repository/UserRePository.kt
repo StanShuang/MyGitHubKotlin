@@ -1,5 +1,6 @@
 package com.stan.mygithub.repository
 
+import android.app.Application
 import com.stan.mygithub.api.RepoService
 import com.stan.mygithub.api.UserService
 import com.stan.mygithub.been.User
@@ -7,6 +8,9 @@ import com.stan.mygithub.commen.config.AppConfig
 import com.stan.mygithub.commen.utils.Debuger
 import com.stan.mygithub.commen.utils.GSYPreference
 import com.stan.mygithub.commen.utils.GsonUtils
+import com.stan.mygithub.commen.utils.UserConversion
+import com.stan.mygithub.module.AppGlobalModel
+import com.stan.mygithub.repository.dao.UserDao
 import com.stan.mygithub.repository.net.FlatMapResponse2Result
 import com.stan.mygithub.repository.net.PageInfo
 import io.reactivex.Observable
@@ -19,7 +23,9 @@ import javax.inject.Inject
 /**
  * 用户相关数据获取
  */
-class UserRePository @Inject constructor(private val retrofit: Retrofit) {
+class UserRePository @Inject constructor(private val retrofit: Retrofit,private val appGlobalModel: AppGlobalModel,
+                                         private val application: Application,private val userDao: UserDao
+) {
     private var userInfoStorage : String by GSYPreference(AppConfig.USER_INFO,"")
     /**
      * 获取用户详细信息
@@ -70,9 +76,11 @@ class UserRePository @Inject constructor(private val retrofit: Retrofit) {
             if(loginUser){
                 //保存用户信息
                 userInfoStorage = GsonUtils.toJsonString(it)
-                //TODO:用户相关实体转换
+                //用户相关实体转换
+                UserConversion.cloneDataFromUser(application,it,appGlobalModel.userObservable)
             }
             //TODO:用户相关数据库操作
+            userDao.saveUserInfo(Response.success(it),it.login!!)
         }.onErrorResumeNext(Function<Throwable, Observable<User>> {
             ///拦截错误
             //userInfoStorage = ""

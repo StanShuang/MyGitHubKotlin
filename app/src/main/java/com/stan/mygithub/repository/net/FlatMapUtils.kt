@@ -9,6 +9,8 @@ import retrofit2.Response
  * Author: Stan
  * Date: 2019/7/25 17:10
  */
+
+
 /**
  * 将Response转化为实体数据
  */

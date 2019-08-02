@@ -11,6 +11,7 @@ package com.stan.mygithub.commen.config
  */
 object AppConfig {
     const val GITHUB_API_BASE_URL = "https://api.github.com/"
+    const val GRAPHIC_HOST = "https://ghchart.rshah.org/"
     const val USER_NAME = "user_name"
     const val PASSWORD = "pass_word"
     const val USER_INFO = "user_info"
@@ -20,4 +21,5 @@ object AppConfig {
     const val HTTP_TIME_OUT = 20 * 1000L
     const val TEST_STRING = "test_string"
     const val PREFERENCE_NAME = "mygithub"
+
 }

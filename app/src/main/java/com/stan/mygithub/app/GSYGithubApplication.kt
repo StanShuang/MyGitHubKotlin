@@ -5,11 +5,13 @@ import android.app.Application
 import com.alibaba.android.arouter.launcher.ARouter
 import com.mikepenz.iconics.Iconics
 import com.stan.mygithub.BuildConfig
+import com.stan.mygithub.commen.db.RealmFactory
 import com.stan.mygithub.commen.style.GSYIconfont
 import com.stan.mygithub.di.AppInjector
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
+import io.realm.Realm
 import javax.inject.Inject
 
 import kotlin.properties.Delegates
@@ -51,6 +53,9 @@ class GSYGithubApplication: Application(),HasActivityInjector {
         ///初始化图标库
         Iconics.init(applicationContext)
         Iconics.registerFont(GSYIconfont)
+        //初始化数据库
+        Realm.init(this)
+        RealmFactory.instance
     }
     override fun activityInjector(): AndroidInjector<Activity> {
         return dispatchingAndroidInjector

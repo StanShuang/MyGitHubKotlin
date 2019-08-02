@@ -17,7 +17,8 @@ ext{
             okhttp3_version:"3.10.0",
             rx_android:"2.1.1",
             rx_version:"2.2.10",
-            spinkit_version:"1.2.0"
+            spinkit_version:"1.2.0",
+            glideSdkVersion         : "4.8.0",
 
 
     ]
@@ -33,6 +34,7 @@ ext{
             lottie:              "com.airbnb.android:lottie:${dependVersion.lottie_version}",
             textFieldBoxes:      "com.github.HITGIF:TextFieldBoxes:${dependVersion.textfiled_box_version}",
             spinkit:             "com.github.ybq:Android-SpinKit:${dependVersion.spinkit_version}",
+            materialdialogs:    "com.afollestad.material-dialogs:commons:0.9.4.4"
     ]
     httpDeps = [
             okhttp3:             "com.squareup.okhttp3:logging-interceptor:${dependVersion.okhttp3_version}",
@@ -41,7 +43,9 @@ ext{
             retrofitAdapter:     "com.squareup.retrofit2:adapter-rxjava2:${dependVersion.retrofit_version}",
             retrofitconverter:   "com.squareup.retrofit2:converter-scalars:${dependVersion.retrofit_version}",
             rxAndroid:           "io.reactivex.rxjava2:rxandroid:${dependVersion.rx_android}",
-            rxJava:              "io.reactivex.rxjava2:rxjava:${dependVersion.rx_version}"
+            rxJava:              "io.reactivex.rxjava2:rxjava:${dependVersion.rx_version}",
+            glideCompiler:     "com.github.bumptech.glide:compiler:${dependVersion.glideSdkVersion}",
+            glideOkhttp:     "com.github.bumptech.glide:okhttp3-integration:${dependVersion.glideSdkVersion}"
 
     ]
     mikepenzViewDeps = [

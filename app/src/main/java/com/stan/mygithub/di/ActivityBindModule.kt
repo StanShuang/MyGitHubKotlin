@@ -1,6 +1,7 @@
 package com.stan.mygithub.di
 
 import com.stan.mygithub.di.annotation.ActivityScope
+import com.stan.mygithub.ui.activity.MainActivity
 import com.stan.mygithub.ui.activity.StartNavigationActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -21,5 +22,9 @@ abstract class ActivityBindModule {
     //节省代码
     @ContributesAndroidInjector(modules = [StartFragmentBindModule::class])
     abstract fun startNavigationActivityInjector(): StartNavigationActivity
+
+    @ActivityScope
+    @ContributesAndroidInjector
+    abstract fun mainActivityInjector(): MainActivity
 
 }
