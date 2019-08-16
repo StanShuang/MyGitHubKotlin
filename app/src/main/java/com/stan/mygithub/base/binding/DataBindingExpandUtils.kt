@@ -1,9 +1,13 @@
 package com.stan.mygithub.base.binding
 
+import android.graphics.Point
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
+import androidx.databinding.DataBindingComponent
+import com.stan.mygithub.commen.utils.CommonUtils
+import com.stan.mygithub.commen.utils.dp
 
 
 /**
@@ -18,21 +22,14 @@ import androidx.databinding.BindingAdapter
 class DataBindingExpandUtils{
     companion object {
         /**
-         * EditText的按键监听
+         * 圆形用户头像加载
          */
-        @BindingAdapter("keyListener")
-        fun editTextKeyListener(view: EditText?,listener: View.OnKeyListener){
-            view?.apply {
-                this.setOnKeyListener(listener)
-            }
+        @BindingAdapter("userHeaderUrl",requireAll = false)
+        fun loadImage(view: ImageView, url: String?, size: Int = 50){
+            CommonUtils.loadUserHeaderImage(view, url ?: "", Point(size.dp, size.dp))
         }
     }
 
 }
-/**
- * 加载DataBinding的扩展适配器
- */
-//class GSYDataBindingComponent : DataBindingComponent{
-//    override fun getCompanion(): DataBindingExpandUtils.Companion = DataBindingExpandUtils
-//}
+
 

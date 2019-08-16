@@ -2,17 +2,14 @@ package com.stan.mygithub.ui.activity
 
 import android.graphics.drawable.Drawable
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.view.WindowManager
 import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
-import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.stan.mygithub.R
 import com.stan.mygithub.base.BaseActivity
@@ -34,6 +31,12 @@ class MainActivity : BaseActivity() , HasSupportFragmentInjector{
     lateinit var appGlobal :AppGlobalModel
     @Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
+    private var isFirst: Boolean = true
+    /**
+     * fragment 列表
+     */
+    @Inject
+    lateinit var mainFragmentList: MutableList<Fragment>
     private var nav_userName : TextView? = null
     private var nav_image : CircleImageView? = null
     override fun attacthLayoutRes(): Int {
@@ -46,10 +49,13 @@ class MainActivity : BaseActivity() , HasSupportFragmentInjector{
 
     override fun initView() {
         toolbar.run {
-            title = getString(R.string.app_name)
+            title = getString(R.string.ActionRecommend)
             setSupportActionBar(this)
         }
         initDrawerLayout()
+        bottom_navigation.run {
+            setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+        }
         nav_view.run {
             setNavigationItemSelectedListener(onDrawerNavigationItemSelectedListener)
             nav_userName = getHeaderView(0).findViewById(R.id.tv_username)
@@ -73,7 +79,7 @@ class MainActivity : BaseActivity() , HasSupportFragmentInjector{
 
                 })
         }
-
+        showFragment(0)
     }
 
 
@@ -100,6 +106,43 @@ class MainActivity : BaseActivity() , HasSupportFragmentInjector{
 
         true
     }
+    private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        return@OnNavigationItemSelectedListener when (item.itemId) {
+            R.id.action_recommend -> {
+                showFragment(0)
+                toolbar.title = getString(R.string.ActionRecommend)
+                true
+            }
+            R.id.action_navigation -> {
+                showFragment(1)
+                toolbar.title = getString(R.string.ActionTrend)
+                true
+            }
+            R.id.action_mine -> {
+                showFragment(2)
+                toolbar.title = getString(R.string.ActionMine)
+                true
+            }
+            else -> {
+                false
+            }
+        }
+    }
+
+    private fun showFragment(index: Int) {
+        val transition = supportFragmentManager.beginTransaction()
+        for(i in 0 until mainFragmentList.size){
+            transition.hide(mainFragmentList[i])
+            if(isFirst){
+                transition.add(R.id.container,mainFragmentList[i])
+            }
+        }
+        isFirst = false
+        transition.show(mainFragmentList[index])
+        transition.commit()
+    }
+
+
     override fun supportFragmentInjector(): AndroidInjector<Fragment> {
         return dispatchingAndroidInjector
     }

@@ -9,7 +9,7 @@
     <string name="LoginFailTip">登陆失败</string>
     <string name="AppOut">再次点击退出</string>
     <string name="ActionRecommend">推荐</string>
-    <string name="ActionTrend">趋势</string>
+    <string name="ActionTrend">动态</string>
     <string name="ActionMine">我的</string>
     <string name="nav_feedback">用户反馈</string>
     <string name="nav_setting">偏好设置</string>
@@ -24,6 +24,11 @@
     <string name="FollowersText">粉丝</string>
     <string name="FollowedText">关注</string>
     <string name="repositoryText">仓库</string>
+    <string name="loading_prepare">正在刷新</string>
+    <string name="loading_drop">松开即可刷新</string>
+    <string name="loading_start">刷新中</string>
+    <string name="loading_end">完成</string>
+    <string name="listEmpty">暂无数据</string>
 
     <string name="error_401">[401错误可能: 未授权 \\ 授权登录失败 \\ 登录过期]</string>
     <string name="error_403">403没权限哦</string>
@@ -33,4 +38,47 @@
     <string name="netError">网络错误</string>
     <string name="netTimeout">网络超时</string>
     <string name="unKnowError">未知异常</string>
+
+
+
+    <array name="trend_language">
+        <item>全部</item>
+        <item>Java</item>
+        <item>Kotlin</item>
+        <item>Dart</item>
+        <item>Objective-C</item>
+        <item>Swift</item>
+        <item>JavaScript</item>
+        <item>PHP</item>
+        <item>Go</item>
+        <item>C++</item>
+        <item>C</item>
+        <item>HTML</item>
+        <item>CSS</item>
+    </array>
+    <array name="trend_since">
+        <item>今日</item>
+        <item>本周</item>
+        <item>本月</item>
+    </array>
+    <array name="trend_since_data">
+        <item>daily</item>
+        <item>weekly</item>
+        <item>monthly</item>
+    </array>
+    <array name="trend_language_data">
+        <item> </item>
+        <item>Java</item>
+        <item>Kotlin</item>
+        <item>Dart</item>
+        <item>Objective-C</item>
+        <item>Swift</item>
+        <item>JavaScript</item>
+        <item>PHP</item>
+        <item>Go</item>
+        <item>C++</item>
+        <item>C</item>
+        <item>HTML</item>
+        <item>CSS</item>
+    </array>
 </resources>

@@ -10,6 +10,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
+import com.stan.mygithub.base.binding.LoadDataBindingComponent
 import com.stan.mygithub.base.binding.autoCleared
 import com.stan.mygithub.di.Injectable
 import java.util.*
@@ -23,7 +24,7 @@ import java.util.*
  * <author> <time> <version> <desc>
  * 作者姓名 修改时间 版本号 描述
  */
-abstract class BaseFragment<T : ViewDataBinding>() : Fragment(),Injectable {
+abstract class BaseFragment<T : ViewDataBinding>: Fragment(),Injectable {
 
     /**
      * 根据Fragment动态清理和获取binding对象
@@ -35,8 +36,8 @@ abstract class BaseFragment<T : ViewDataBinding>() : Fragment(),Injectable {
            inflater,
            getLayoutId(),
            container,
-           false
-          )
+           false,
+           LoadDataBindingComponent())
         onCreateView(binding?.root)
         return binding?.root
     }

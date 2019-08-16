@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+        <com.yyydjk.library.DropDownMenu
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/trend_drop_menu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:dddividerColor="@color/Grey400"
+                app:ddmaskColor="@color/mask_color"
+                app:ddmenuBackgroundColor="@color/colorPrimary"
+                app:ddmenuMenuHeightPercent="0.5"
+                app:ddmenuSelectedIcon="@mipmap/arrow_dropup"
+                app:ddmenuTextSize="@dimen/sp_14"
+                app:ddmenuUnselectedIcon="@mipmap/arrow_dropdown"
+                app:ddtextSelectedColor="@color/white"
+                app:ddtextUnselectedColor="@color/Grey400"
+                app:ddunderlineColor="@color/Grey200">
+
+        </com.yyydjk.library.DropDownMenu>
+
+    </LinearLayout>
+</layout>

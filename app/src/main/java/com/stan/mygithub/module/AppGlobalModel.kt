@@ -1,5 +1,6 @@
 package com.stan.mygithub.module
 
+import com.stan.mygithub.module.data.UserUIModel
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -10,5 +11,5 @@ import javax.inject.Singleton
  */
 @Singleton
 class AppGlobalModel @Inject constructor() {
-     val userObservable =UserUIModel()
+     val userObservable = UserUIModel()
 }

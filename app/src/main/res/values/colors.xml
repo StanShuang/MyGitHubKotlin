@@ -10,4 +10,8 @@
     <color name="list_divider">@color/Grey400</color>
     <color name="Grey400">#bdbdbd</color>
     <color name="item_nav_color_tv">#19191B</color>
+    <color name="Grey200">#EEEEEE</color>
+    <color name="Grey500">#9e9e9e</color>
+    <color name="subTextColor">#959595</color>
+    <color name="maskColor">#88000000</color>
 </resources>

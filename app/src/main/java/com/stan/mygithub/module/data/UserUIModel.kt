@@ -1,4 +1,4 @@
-package com.stan.mygithub.module
+package com.stan.mygithub.module.data
 
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable

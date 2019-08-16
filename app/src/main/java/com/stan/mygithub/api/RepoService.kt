@@ -4,10 +4,7 @@ import com.stan.mygithub.been.Repository
 import com.stan.mygithub.commen.config.AppConfig
 import io.reactivex.Observable
 import retrofit2.Response
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.Path
-import retrofit2.http.Query
+import retrofit2.http.*
 import java.util.ArrayList
 
 /**
@@ -37,4 +34,12 @@ interface RepoService {
         @Query("sort") sort: String = "updated",
         @Query("per_page") per_page: Int = AppConfig.PAGE_SIZE
     ) : Observable<Response<ArrayList<Repository>>>
+    @GET("https://github.com/trending/{languageType}")
+    @Headers("Content-Type: text/plain;charset=utf-8")
+    fun getTrendData(
+        @Header("forceNetWork") forceNetWork: Boolean,
+        @Path("languageType") languageType: String,
+        @Query("since") since: String
+
+    ):Observable<Response<String>>
 }

@@ -24,7 +24,7 @@ abstract class ActivityBindModule {
     abstract fun startNavigationActivityInjector(): StartNavigationActivity
 
     @ActivityScope
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = [MainActivityModeule::class,MianFragmentBindModeule :: class])
     abstract fun mainActivityInjector(): MainActivity
 
 }

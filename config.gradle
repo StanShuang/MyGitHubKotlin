@@ -19,6 +19,9 @@ ext{
             rx_version:"2.2.10",
             spinkit_version:"1.2.0",
             glideSdkVersion         : "4.8.0",
+            android_support:"1.1.0-beta01",
+            drop_menu_version:"1.0.4",
+            recycler_common_version:"v4.0.6"
 
 
     ]
@@ -27,14 +30,18 @@ ext{
             corektx:             "androidx.core:core-ktx:1.0.2",
             constrantlayout:     "androidx.constraintlayout:constraintlayout:1.1.3",
             navigationFragment:  "androidx.navigation:navigation-fragment:2.1.0-beta02",
-            navigationUi:        "androidx.navigation:navigation-ui:2.1.0-beta02"
+            navigationUi:        "androidx.navigation:navigation-ui:2.1.0-beta02",
+            recycler:            "androidx.recyclerview:recyclerview:${dependVersion.android_support}"
 
     ]
     commonDeps = [
             lottie:              "com.airbnb.android:lottie:${dependVersion.lottie_version}",
             textFieldBoxes:      "com.github.HITGIF:TextFieldBoxes:${dependVersion.textfiled_box_version}",
             spinkit:             "com.github.ybq:Android-SpinKit:${dependVersion.spinkit_version}",
-            materialdialogs:    "com.afollestad.material-dialogs:commons:0.9.4.4"
+            materialdialogs:     "com.afollestad.material-dialogs:commons:0.9.4.4",
+            dropmenu:            "com.github.dongjunkun:DropDownMenu:${dependVersion.drop_menu_version}",
+            lazyRecyclerAdatper: "com.github.CarGuo.LazyRecyclerAdapter:CommonRecycler-Kotlin:${dependVersion.recycler_common_version}",
+            materialdrawer:       "com.mikepenz:materialdrawer:7.0.0-rc03"
     ]
     httpDeps = [
             okhttp3:             "com.squareup.okhttp3:logging-interceptor:${dependVersion.okhttp3_version}",

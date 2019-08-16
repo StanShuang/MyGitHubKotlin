@@ -2,11 +2,19 @@ package com.stan.mygithub.app
 
 import android.app.Activity
 import android.app.Application
+import android.content.Context
+import android.graphics.drawable.Drawable
+import android.net.Uri
+import android.widget.ImageView
 import com.alibaba.android.arouter.launcher.ARouter
 import com.mikepenz.iconics.Iconics
+import com.mikepenz.materialdrawer.util.AbstractDrawerImageLoader
+import com.mikepenz.materialdrawer.util.DrawerImageLoader
 import com.stan.mygithub.BuildConfig
+import com.stan.mygithub.R
 import com.stan.mygithub.commen.db.RealmFactory
 import com.stan.mygithub.commen.style.GSYIconfont
+import com.stan.mygithub.commen.utils.CommonUtils
 import com.stan.mygithub.di.AppInjector
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -56,6 +64,20 @@ class GSYGithubApplication: Application(),HasActivityInjector {
         //初始化数据库
         Realm.init(this)
         RealmFactory.instance
+
+        DrawerImageLoader.init(object : AbstractDrawerImageLoader() {
+
+            override fun placeholder(ctx: Context): Drawable {
+                return getDrawable(R.drawable.logo)
+            }
+
+            override fun placeholder(ctx: Context, tag: String?): Drawable {
+                return getDrawable(R.drawable.logo)
+            }
+            override fun set(imageView: ImageView, uri: Uri, placeholder: Drawable, tag: String?) {
+                CommonUtils.loadUserHeaderImage(imageView, uri.toString())
+            }
+        })
     }
     override fun activityInjector(): AndroidInjector<Activity> {
         return dispatchingAndroidInjector

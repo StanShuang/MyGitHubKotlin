@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat
 import com.stan.mygithub.R
 import com.stan.mygithub.been.User
 import com.stan.mygithub.commen.config.AppConfig
-import com.stan.mygithub.module.UserUIModel
+import com.stan.mygithub.module.data.UserUIModel
 
 /**
  * Author: Stan

@@ -11,7 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <include layout="@layout/toolbar"/>
-            <include layout="@layout/contaner"/>
+            <include layout="@layout/container"/>
         <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottom_navigation"
                 style="@style/Widget.Design.BottomNavigationView"

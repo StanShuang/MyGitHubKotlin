@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.stan.mygithub.app.GSYViewModelFactory
 import com.stan.mygithub.di.annotation.ViewModelKey
 import com.stan.mygithub.module.LoginViewModel
+import com.stan.mygithub.module.TrendViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -30,6 +31,11 @@ abstract class ViewModelModule {
     //@MapKey的封装注解
     @ViewModelKey(LoginViewModel::class)
     abstract fun bindLoginViewModel(loginViewModel: LoginViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(TrendViewModel::class)
+    abstract fun bindTrendViewModel(trendViewModel: TrendViewModel): ViewModel
 
 
     @Binds

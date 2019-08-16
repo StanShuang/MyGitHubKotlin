@@ -14,6 +14,9 @@ import com.google.gson.JsonParser
  * 作者姓名 修改时间 版本号 描述
  */
 object GsonUtils {
+    /**
+     * json 数据转化为实体类
+     */
     fun <T> parserJsonToBean(jsonString: String, clazzBean: Class<T>): T {
         if (TextUtils.isEmpty(jsonString)) {
             throw RuntimeException("parserJsonToArrayBean jsonString empty")
